@@ -1,8 +1,9 @@
 'use client';
 import { useTheme } from 'next-themes';
 import { useLanguage } from '@/context/LanguageContext';
-import { Link, Monitor, Moon, Sun, Terminal } from 'lucide-react';
+import { Monitor, Moon, Sun, Terminal } from 'lucide-react'; 
 import Image from 'next/image';
+import Link from 'next/link'; 
 import styles from './Navbar.module.css';
 import { useEffect, useState } from 'react';
 
