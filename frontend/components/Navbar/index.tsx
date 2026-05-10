@@ -2,6 +2,7 @@
 import { useTheme } from 'next-themes';
 import { useLanguage } from '@/context/LanguageContext';
 import { Monitor, Moon, Sun, Terminal } from 'lucide-react';
+import Image from 'next/image';
 import styles from './Navbar.module.css';
 import { useEffect, useState } from 'react';
 
@@ -13,10 +14,16 @@ export default function Navbar() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <nav className={styles.navbar}>
+ <nav className={styles.navbar}>
       <div className={styles.logo}>
-        <Terminal size={24} />
-        <span>MW Portfolio</span>
+        {/* 2. เรียกใช้โลโก้ของคุณตรงนี้ */}
+        <Image 
+          src="/Logo/logo.jpg"   
+          alt="MW Logo" 
+          width={32}        
+          height={32}       
+        />
+        <span>Mongkhon Wichaiphap</span>
       </div>
       
       <div className={styles.navLinks}>
