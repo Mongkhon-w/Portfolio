@@ -1,0 +1,73 @@
+name: Portfolio CI/CD Pipeline
+
+# กำหนดให้ Workflow ทำงานเมื่อมีการ Push โค้ดเข้าสาขา main
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  # =========================================
+  # Job 1: ทดสอบการ Build (ป้องกันโค้ดพังขึ้น Production)
+  # =========================================
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # สร้างไฟล์ .env จำลองชั่วคราว เพื่อให้ Next.js Build ผ่าน
+      - name: Create temporary .env for Build
+        run: |
+          echo "NEXT_PUBLIC_API_HOST=http://localhost:3001" > .env
+          echo "MYSQL_DB=portfolio_db" >> .env
+          echo "MYSQL_USER=testuser" >> .env
+          echo "MYSQL_PASSWORD=testpass" >> .env
+
+      - name: Test Docker Compose Build
+        run: docker compose build
+
+  # =========================================
+  # Job 2: นำโค้ดขึ้น Server (Deploy) ผ่าน SSH
+  # =========================================
+  deploy:
+    needs: build-and-test # ต้องรอให้ Job แรกรันผ่านก่อนถึงจะ Deploy
+    # ทำงานเฉพาะเมื่อเป็นการ Push ขึ้น main เท่านั้น (ไม่ทำตอน Pull Request)
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to VPS Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script: |
+            # 1. เข้าไปยังโฟลเดอร์โปรเจกต์บน Server (เปลี่ยน path ให้ตรงกับเซิร์ฟเวอร์จริงของคุณ)
+            cd /D:/my-project/Portfolio
+            
+            # 2. ดึงโค้ดล่าสุดจาก GitHub
+            git pull origin main
+            
+            # 3. สร้างไฟล์ .env ของจริงบน Server จาก GitHub Secrets (ปลอดภัยที่สุด)
+            echo "MYSQL_DB=${{ secrets.MYSQL_DB }}" > .env
+            echo "MYSQL_USER=${{ secrets.MYSQL_USER }}" >> .env
+            echo "MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}" >> .env
+            echo "MYSQL_ROOT_PASSWORD=${{ secrets.MYSQL_ROOT_PASSWORD }}" >> .env
+            echo "MYSQL_PORT=3306" >> .env
+            echo "PMA_PORT=8888" >> .env
+            echo "API_PORT=3001" >> .env
+            echo "FRONTEND_PORT=3000" >> .env
+            echo "API_HOST=${{ secrets.API_HOST }}" >> .env
+            
+            # 4. สั่งรัน Docker ใหม่
+            docker compose down
+            docker compose up -d --build
+            
+            # 5. ลบไฟล์ภาพที่ไม่ได้ใช้แล้วทิ้ง (ประหยัดพื้นที่ Server)
+            docker image prune -f
