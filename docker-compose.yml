@@ -1,0 +1,19 @@
+services:
+  # ... (ส่วนของ mysql และ phpmyadmin เหมือนเดิม) ...
+
+  # อัปเดต Path ของ Database Volume
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro # <-- แก้ตรงนี้
+
+  # Node.js API
+  api:
+    build:
+      context: ./backend # <-- ชี้ไปที่โฟลเดอร์ backend
+    # ...
+
+  # Next.js Frontend
+  frontend:
+    build:
+      context: ./frontend # <-- ชี้ไปที่โฟลเดอร์ frontend
+    # ...
