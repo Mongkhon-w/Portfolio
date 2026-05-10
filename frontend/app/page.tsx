@@ -1,41 +1,68 @@
 'use client';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useLanguage } from '@/context/LanguageContext';
 import styles from './page.module.css';
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  tech_stack: string;
-}
+import { MapPin, Server, ChevronDown, Database, Network } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Home() {
-  const [projects, setProjects] = useState<Project[]>([]);
-
-  useEffect(() => {
-    // ดึงข้อมูลจาก API แบบ JSON
-    axios.get('http://localhost:3001/api/projects')
-      .then(response => {
-        if (response.data.success) {
-          setProjects(response.data.data);
-        }
-      })
-      .catch(error => console.error("Error fetching projects:", error));
-  }, []);
+  const { t } = useLanguage();
 
   return (
     <main className={styles.container}>
-      <h1 className={styles.title}>แฟ้มสะสมผลงาน (Portfolio)</h1>
-      
-      <div>
-        {projects.map((project) => (
-          <div key={project.id} className={styles.card}>
-            <h2>{project.title}</h2>
-            <p>{project.description}</p>
-            <p className={styles.tech}>เครื่องมือที่ใช้: {project.tech_stack}</p>
+      <div className={styles.hero}>
+        <div className={styles.mascot}>
+          {/* ใส่รูปภาพ Mascot หรือโลโก้ของคุณที่นี่ */}
+          <Server size={64} color="var(--text-secondary)" />
+        </div>
+        
+    <div className={styles.links}>
+      <div className={styles.linkItem}>
+        <MapPin size={18} /> {t.location}
+      </div>
+      <a href="#" className={styles.linkItem}>
+        {/* 3. เปลี่ยนจาก <Github /> เป็น <FaGithub /> */}
+        <FaGithub size={18} /> {t.source}
+      </a>
+    </div>
+
+        <p className={styles.description}>{t.description}</p>
+      </div>
+
+      <div className={styles.apiSection}>
+        <div className={styles.apiHeader}>
+          <div className={styles.apiTitle}>
+            <Server size={24} /> {t.apiEndpoints}
           </div>
-        ))}
+          <a href="#" className={styles.viewAll}>{t.viewAll}</a>
+        </div>
+
+        {/* เมนูที่ 1: Financial API */}
+        <div className={styles.accordion}>
+          <div className={styles.accordionLeft}>
+            <div className={styles.iconBox}>
+              <Database size={20} />
+            </div>
+            <div className={styles.accordionContent}>
+              <h3>{t.financeApi}</h3>
+              <p>{t.financeDesc}</p>
+            </div>
+          </div>
+          <ChevronDown size={20} color="var(--text-secondary)" />
+        </div>
+
+        {/* เมนูที่ 2: Network Config API */}
+        <div className={styles.accordion}>
+          <div className={styles.accordionLeft}>
+            <div className={styles.iconBox} style={{ color: '#10b981', backgroundColor: 'rgba(16, 185, 129, 0.1)' }}>
+              <Network size={20} />
+            </div>
+            <div className={styles.accordionContent}>
+              <h3>{t.networkApi}</h3>
+              <p>{t.networkDesc}</p>
+            </div>
+          </div>
+          <ChevronDown size={20} color="var(--text-secondary)" />
+        </div>
       </div>
     </main>
   );

@@ -1,21 +1,101 @@
 .container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
-  font-family: sans-serif;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.title {
-  color: #333;
+.hero {
   text-align: center;
+  margin-bottom: 4rem;
 }
-.card {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-top: 1rem;
-  background-color: #f9f9f9;
+.mascot {
+  width: 150px;
+  height: 150px;
+  background-color: var(--bg-card);
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
 }
-.tech {
-  color: #0066cc;
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+.linkItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+.description {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.apiSection {
+  width: 100%;
+}
+.apiHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.apiTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.5rem;
   font-weight: bold;
+}
+.viewAll {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.accordion {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.accordion:hover {
+  border-color: var(--accent);
+}
+.accordionContent h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+}
+.accordionContent p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.iconBox {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--accent);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+.accordionLeft {
+  display: flex;
+  align-items: center;
 }
