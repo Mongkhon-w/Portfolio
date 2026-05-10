@@ -1,19 +1,70 @@
 services:
-  # ... (ส่วนของ mysql และ phpmyadmin เหมือนเดิม) ...
-
-  # อัปเดต Path ของ Database Volume
+  # 1. MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: portfolio_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE:       ${MYSQL_DB}
+      MYSQL_USER:           ${MYSQL_USER}
+      MYSQL_PASSWORD:       ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD:  ${MYSQL_ROOT_PASSWORD}
+      TZ: Asia/Bangkok
+    ports:
+      - "127.0.0.1:${MYSQL_PORT:-3306}:3306"
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro # <-- แก้ตรงนี้
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+    networks: [stack]
 
-  # Node.js API
+  # 2. phpMyAdmin
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: portfolio_phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: ${MYSQL_USER}
+      PMA_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "${PMA_PORT:-8888}:80"
+    depends_on:
+      - mysql
+    networks: [stack]
+
+  # 3. Node.js API
   api:
-    build:
-      context: ./backend # <-- ชี้ไปที่โฟลเดอร์ backend
-    # ...
+    build: ./backend
+    container_name: portfolio_api
+    restart: unless-stopped
+    environment:
+      PORT:        ${API_PORT:-3001}
+      DB_HOST:     mysql
+      DB_USER:     ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME:     ${MYSQL_DB}
+    ports:
+      - "${API_PORT:-3001}:3001"
+    depends_on:
+      - mysql
+    networks: [stack]
 
-  # Next.js Frontend
+  # 4. Next.js Frontend
   frontend:
-    build:
-      context: ./frontend # <-- ชี้ไปที่โฟลเดอร์ frontend
-    # ...
+    build: ./frontend
+    container_name: portfolio_frontend
+    restart: unless-stopped
+    environment:
+      NEXT_PUBLIC_API_HOST: ${API_HOST:-http://localhost:3001}
+    ports:
+      - "${FRONTEND_PORT:-3000}:3000"
+    depends_on:
+      - api
+    networks: [stack]
+
+volumes:
+  mysql_data:
+
+networks:
+  stack:
+    driver: bridge
