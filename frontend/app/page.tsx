@@ -1,7 +1,8 @@
 'use client';
 import { useLanguage } from '@/context/LanguageContext';
 import styles from './page.module.css';
-import { MapPin, Github, Server, ChevronDown, Database, Network } from 'lucide-react';
+import { MapPin, Server, ChevronDown, Database, Network } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Home() {
   const { t } = useLanguage();
@@ -14,14 +15,15 @@ export default function Home() {
           <Server size={64} color="var(--text-secondary)" />
         </div>
         
-        <div className={styles.links}>
-          <div className={styles.linkItem}>
-            <MapPin size={18} /> {t.location}
-          </div>
-          <a href="#" className={styles.linkItem}>
-            <Github size={18} /> {t.source}
-          </a>
-        </div>
+    <div className={styles.links}>
+      <div className={styles.linkItem}>
+        <MapPin size={18} /> {t.location}
+      </div>
+      <a href="#" className={styles.linkItem}>
+        {/* 3. เปลี่ยนจาก <Github /> เป็น <FaGithub /> */}
+        <FaGithub size={18} /> {t.source}
+      </a>
+    </div>
 
         <p className={styles.description}>{t.description}</p>
       </div>
