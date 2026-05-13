@@ -1,8 +1,9 @@
 'use client';
 import { useTheme } from 'next-themes';
 import { useLanguage } from '@/context/LanguageContext';
-import { Link, Monitor, Moon, Sun, Terminal } from 'lucide-react';
+import { Link as LinkIcon, Monitor, Moon, Sun } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './Navbar.module.css';
 import { useEffect, useState } from 'react';
 
@@ -29,7 +30,7 @@ export default function Navbar() {
       <div className={styles.navLinks}>
         <Link href="/">{t.home}</Link>
         <Link href="#">{t.api}</Link>
-        <Link href="/about">{t.about}</Link> {/* <-- อัปเดตตรงนี้ */}
+        <Link href="/about"> About Me </Link>
         
         <div className={styles.langToggle}>
           <button className={`${styles.langBtn} ${lang === 'EN' ? styles.active : ''}`} onClick={() => toggleLang('EN')}>EN</button>
