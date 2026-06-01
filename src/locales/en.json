@@ -8,39 +8,72 @@
     "greeting": "Hello, I'm",
     "name": "Mongkhon Wichaiphap",
     "role": "Software Developer",
-    "description": "A Computer Engineering graduate passionate about building clean, efficient, and scalable applications.",
+    "description": "A highly motivated Computer Engineering fresh graduate from RMUTP, eager to learn new technologies and give my best to every project.",
     "tech_stack": "Tech Stack"
   },
   "portfolio": {
     "title": "My Projects",
-    "subtitle": "Here are some of the projects I've worked on.",
+    "subtitle": "Here are the key projects I have developed.",
     "projects": [
       {
         "id": 1,
-        "title": "Financial Management App",
-        "description": "A mobile application for tracking and analyzing finances. Built with Flutter, utilizing JSON structures as the primary data export format for maximum flexibility.",
+        "title": "Money Flow (Final Project)",
+        "description": "A financial management app with UI built in Flutter and Dart. Features data visualization, financial metrics calculation, and primarily utilizes JSON for data export flexibility.",
         "tech": ["Flutter", "Dart", "JSON"],
-        "github": "#",
+        "github": "https://github.com/Mongkhon-w/Project_Money_Flow",
         "demo": "#"
       },
       {
         "id": 2,
-        "title": "Coming Soon",
-        "description": "More exciting projects are currently under development and will be added here soon.",
-        "tech": ["Node.js", "PostgreSQL", "Docker"],
-        "github": "#",
+        "title": "Secure Authentication API",
+        "description": "A secure RESTful API developed with Golang and Fiber. Implemented JWT (Access & Refresh Tokens) with HttpOnly cookies, secured by SHA-256 and bcrypt hashing.",
+        "tech": ["Golang", "Fiber", "MySQL", "JWT"],
+        "github": "https://github.com/Mongkhon-w/Go-Auth-Api",
+        "demo": "#"
+      },
+      {
+        "id": 3,
+        "title": "Lab Backend (RESTful API)",
+        "description": "Built a RESTful API using Node.js and TypeScript. Configured PostgreSQL with Docker, utilized Prisma ORM, and managed data storage in JSON format.",
+        "tech": ["Node.js", "TypeScript", "PostgreSQL", "Docker"],
+        "github": "https://github.com/Mongkhon-w",
+        "demo": "#"
+      },
+      {
+        "id": 4,
+        "title": "Auth Cookie Authentication",
+        "description": "An authentication and session management project utilizing secure cookies to enhance web application security and manage user access effectively.",
+        "tech": ["Node.js", "Authentication", "Cookies"],
+        "github": "https://github.com/Mongkhon-w/Auth_Cookie",
+        "demo": "#"
+      },
+      {
+        "id": 5,
+        "title": "Vite Responsive Website",
+        "description": "A web frontend project focused on responsive design, ensuring a seamless user experience across all screen sizes. Powered by Vite for fast performance.",
+        "tech": ["Vite", "Responsive", "Frontend"],
+        "github": "https://github.com/Mongkhon-w/Vite_Responsive",
+        "demo": "#"
+      },
+      {
+        "id": 6,
+        "title": "Dummy App",
+        "description": "A prototype application built to test UI component layouts, system architecture, and basic data integration before full-scale development.",
+        "tech": ["Frontend", "Prototype", "Testing"],
+        "github": "https://github.com/Mongkhon-w/Dummy_App",
         "demo": "#"
       }
     ]
   },
   "about": {
-    "title": "About Me",
-    "description": "I hold a Bachelor of Engineering in Computer Engineering (First Class Honors) from Rajamangala University of Technology Phra Nakhon. I have a strong passion for software development, focusing on building scalable backend architectures and intuitive cross-platform applications.",
+    "title": "About & Experience",
+    "description": "As a fresh Computer Engineering graduate, I gained practical experience as an IT Support Intern, troubleshooting Windows/macOS and hardware issues. I am highly passionate about software development and ready to contribute my skills to real-world applications.",
     "education_title": "Education",
-    "education_detail": "B.Eng in Computer Engineering (First Class Honors) - RMUTP",
+    "education_detail": "B.Eng in Computer Engineering - RMUTP",
     "contact_title": "Get In Touch",
-    "email": "Email",
-    "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "email": "sekmongkol123@gmail.com",
+    "phone": "095-938-8521",
+    "github": "https://github.com/Mongkhon-w",
+    "linkedin": "https://www.linkedin.com/in/mongkhon-wichaiphap-a1b87b401/"
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 const Portfolio = () => {
   const { t } = useTranslation();
@@ -11,7 +11,7 @@ const Portfolio = () => {
 
   return (
     <section id="portfolio" className="py-20 px-6 bg-white dark:bg-[#0B1120] transition-colors duration-300">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         
         {/* หัวข้อ Section */}
         <div className="text-center mb-16">
@@ -34,28 +34,29 @@ const Portfolio = () => {
           </motion.p>
         </div>
 
-        {/* ตารางแสดงการ์ดโปรเจกต์ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* ตารางแสดงการ์ดโปรเจกต์ (ปรับเป็น 3 คอลัมน์สำหรับจอใหญ่เพื่อให้พอดีกับ 6 โปรเจกต์) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2, duration: 0.5 }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
               whileHover={{ y: -5 }}
-              className="bg-gray-50 dark:bg-dark-card rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-lg border border-gray-200 dark:border-gray-800 transition-all duration-300"
+              className="bg-gray-50 dark:bg-dark-card rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-200 dark:border-gray-800 transition-all duration-300 flex flex-col"
             >
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
                 {project.title}
               </h3>
               
-              <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-3 leading-relaxed">
+              {/* ใช้ flex-grow เพื่อดันส่วนอื่นๆ ไปด้านล่างเสมอ */}
+              <p className="text-gray-600 dark:text-gray-300 mb-6 flex-grow leading-relaxed text-sm">
                 {project.description}
               </p>
 
               {/* ป้ายกำกับ Tech Stack */}
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.map((tech, i) => (
                   <span 
                     key={i} 
@@ -66,23 +67,15 @@ const Portfolio = () => {
                 ))}
               </div>
 
-              {/* ปุ่มลิงก์ */}
-              <div className="flex gap-4">
+              {/* ปุ่มลิงก์ (เหลือแค่ปุ่ม Code) */}
+              <div className="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
                 <a 
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
+                  className="flex items-center gap-2 text-sm font-bold text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
                 >
                   <FaGithub size={18} /> Code
-                </a>
-                <a 
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors"
-                >
-                  <FaExternalLinkAlt size={16} /> Live Demo
                 </a>
               </div>
             </motion.div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaEnvelope, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGraduationCap, FaEnvelope, FaGithub, FaLinkedin, FaPhoneAlt } from 'react-icons/fa'; // เพิ่ม FaPhoneAlt
 
 const About = () => {
   const { t } = useTranslation();
@@ -43,19 +43,24 @@ const About = () => {
               </h3>
               
               <div className="flex flex-col gap-4">
-                <a href="mailto:your.email@example.com" className="flex items-center gap-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50">
+                <a href={`mailto:${t('about.email')}`} className="flex items-center gap-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50">
                   <FaEnvelope size={24} />
                   <span className="font-medium">{t('about.email')}</span>
                 </a>
-                
-                <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50">
-                  <FaGithub size={24} />
-                  <span className="font-medium">{t('about.github')}</span>
+
+                <a href={`tel:${t('about.phone')}`} className="flex items-center gap-4 text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50">
+                  <FaPhoneAlt size={22} />
+                  <span className="font-medium">{t('about.phone')}</span>
                 </a>
                 
-                <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-600 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500 transition-colors p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50">
+                <a href={t('about.github')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50">
+                  <FaGithub size={24} />
+                  <span className="font-medium">GitHub Profile</span>
+                </a>
+                
+                <a href={t('about.linkedin')} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-gray-600 dark:text-gray-300 hover:text-blue-700 dark:hover:text-blue-500 transition-colors p-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800/50">
                   <FaLinkedin size={24} />
-                  <span className="font-medium">{t('about.linkedin')}</span>
+                  <span className="font-medium">LinkedIn Profile</span>
                 </a>
               </div>
             </div>
