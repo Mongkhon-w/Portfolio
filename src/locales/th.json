@@ -8,39 +8,72 @@
     "greeting": "สวัสดีครับ ผมชื่อ",
     "name": "มงคล วิชัยภาพ",
     "role": "นักพัฒนาซอฟต์แวร์",
-    "description": "บัณฑิตวิศวกรรมคอมพิวเตอร์ที่หลงใหลในการสร้างสรรค์แอปพลิเคชันที่คลีน มีประสิทธิภาพ และต่อยอดได้",
+    "description": "นักศึกษาจบใหม่ คณะวิศวกรรมศาสตร์ สาขาวิศวกรรมคอมพิวเตอร์ มหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร พร้อมเรียนรู้สิ่งใหม่ๆ และตั้งใจทำงานอย่างเต็มที่",
     "tech_stack": "เทคโนโลยีที่เชี่ยวชาญ"
   },
   "portfolio": {
     "title": "ผลงานของฉัน",
-    "subtitle": "นี่คือส่วนหนึ่งของโปรเจกต์ที่ผมได้พัฒนา",
+    "subtitle": "โปรเจกต์ที่ผมได้ออกแบบและพัฒนา",
     "projects": [
       {
         "id": 1,
-        "title": "แอปพลิเคชันจัดการการเงิน",
-        "description": "แอปพลิเคชันมือถือสำหรับติดตามและวิเคราะห์การเงิน พัฒนาด้วยกรอบการทำงาน Flutter โดยเลือกใช้โครงสร้างข้อมูลแบบ JSON เป็นรูปแบบหลักในการส่งออกข้อมูลเพื่อความยืดหยุ่นสูงสุด",
+        "title": "Money Flow (Final Project)",
+        "description": "แอปพลิเคชันจัดการการเงิน พัฒนา UI ด้วย Flutter และ Dart นำเสนอข้อมูลทางการเงินผ่านกราฟิก จัดการคำนวณตัวชี้วัดทางการเงิน และส่งออกข้อมูลเป็นรูปแบบ JSON เป็นหลักเพื่อความยืดหยุ่น",
         "tech": ["Flutter", "Dart", "JSON"],
-        "github": "#",
+        "github": "https://github.com/Mongkhon-w/Project_Money_Flow",
         "demo": "#"
       },
       {
         "id": 2,
-        "title": "Coming Soon",
-        "description": "โปรเจกต์ที่น่าสนใจอื่นๆ กำลังอยู่ในระหว่างการพัฒนาและจะถูกนำมาเพิ่มที่นี่ในเร็วๆ นี้",
-        "tech": ["Node.js", "PostgreSQL", "Docker"],
-        "github": "#",
+        "title": "Secure Authentication API",
+        "description": "RESTful API สำหรับยืนยันตัวตนด้วย Golang และ Fiber สร้างระบบความปลอดภัยผ่าน JWT (Access & Refresh Tokens) ร่วมกับ HttpOnly cookies พร้อมการเข้ารหัสแฮช SHA-256 และ bcrypt",
+        "tech": ["Golang", "Fiber", "MySQL", "JWT"],
+        "github": "https://github.com/Mongkhon-w/Go-Auth-Api",
+        "demo": "#"
+      },
+      {
+        "id": 3,
+        "title": "Lab Backend (RESTful API)",
+        "description": "ระบบ Backend ที่สร้าง RESTful API โดยใช้ Node.js และ TypeScript ตั้งค่าฐานข้อมูล PostgreSQL ด้วย Docker พร้อมใช้ Prisma ORM จัดการฐานข้อมูลและรูปแบบ JSON",
+        "tech": ["Node.js", "TypeScript", "PostgreSQL", "Docker"],
+        "github": "https://github.com/Mongkhon-w",
+        "demo": "#"
+      },
+      {
+        "id": 4,
+        "title": "Auth Cookie Authentication",
+        "description": "โปรเจกต์พัฒนาระบบยืนยันตัวตนและการจัดการเซสชัน (Session Management) แบบปลอดภัย โดยประยุกต์ใช้ระบบคุกกี้ (Cookies) ในการตรวจสอบสิทธิ์การเข้าถึงข้อมูล",
+        "tech": ["Node.js", "Authentication", "Cookies"],
+        "github": "https://github.com/Mongkhon-w/Auth_Cookie",
+        "demo": "#"
+      },
+      {
+        "id": 5,
+        "title": "Vite Responsive Website",
+        "description": "โปรเจกต์พัฒนาส่วนติดต่อผู้ใช้งาน (Frontend) ที่เน้นการออกแบบ Responsive Design ให้รองรับการแสดงผลทุกขนาดหน้าจอ ทำงานได้อย่างรวดเร็วและมีประสิทธิภาพด้วยเครื่องมือ Vite",
+        "tech": ["Vite", "Responsive", "Frontend"],
+        "github": "https://github.com/Mongkhon-w/Vite_Responsive",
+        "demo": "#"
+      },
+      {
+        "id": 6,
+        "title": "Dummy App",
+        "description": "แอปพลิเคชันต้นแบบ (Prototype) ที่พัฒนาขึ้นเพื่อทดสอบการจัดวาง UI Components การเชื่อมต่อข้อมูลเบื้องต้น และทดสอบโครงสร้างของโปรเจกต์ก่อนพัฒนาจริง",
+        "tech": ["Frontend", "Prototype", "Testing"],
+        "github": "https://github.com/Mongkhon-w/Dummy_App",
         "demo": "#"
       }
     ]
   },
   "about": {
-    "title": "เกี่ยวกับฉัน",
-    "description": "ผมสำเร็จการศึกษาระดับปริญญาตรี สาขาวิศวกรรมคอมพิวเตอร์ (เกียรตินิยมอันดับ 1) จากมหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร มีความมุ่งมั่นและหลงใหลในการพัฒนาซอฟต์แวร์ โดยเน้นที่การออกแบบระบบที่รองรับการขยายตัวและการสร้างแอปพลิเคชันที่ใช้งานง่าย",
+    "title": "เกี่ยวกับฉัน & ประสบการณ์",
+    "description": "ผมเป็นนักศึกษาจบใหม่ที่มีความมุ่งมั่น มีประสบการณ์ฝึกงานในตำแหน่ง IT Support (ดูแลแก้ไขปัญหาระบบปฏิบัติการ Windows/macOS ฮาร์ดแวร์ และโปรแกรมสำนักงาน) ผมพร้อมนำทักษะด้านการพัฒนาซอฟต์แวร์มาประยุกต์ใช้ในการทำงานจริง และเปิดรับการเรียนรู้เทคโนโลยีใหม่ๆ เสมอ",
     "education_title": "ประวัติการศึกษา",
-    "education_detail": "วศ.บ. วิศวกรรมคอมพิวเตอร์ (เกียรตินิยมอันดับ 1) - มทร.พระนคร",
+    "education_detail": "วศ.บ. วิศวกรรมคอมพิวเตอร์ - มหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร",
     "contact_title": "ช่องทางการติดต่อ",
-    "email": "อีเมล",
-    "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "email": "sekmongkol123@gmail.com",
+    "phone": "095-938-8521",
+    "github": "https://github.com/Mongkhon-w",
+    "linkedin": "https://www.linkedin.com/in/mongkhon-wichaiphap-a1b87b401/?locale=th"
   }
 }
