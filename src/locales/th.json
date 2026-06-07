@@ -62,6 +62,22 @@
         "tech": ["Frontend", "Prototype", "Testing"],
         "github": "https://github.com/Mongkhon-w/Dummy_App",
         "demo": "#"
+      },
+      {
+        "id": 7,
+        "title": "Playwright Automation Test",
+        "description": "โปรเจกต์พัฒนาระบบทดสอบอัตโนมัติ (Automated Testing) สำหรับ Web Application ด้วยเครื่องมือ Playwright เพื่อจำลองการทำงานของผู้ใช้และทดสอบการทำงานแบบ End-to-End (E2E)",
+        "tech": ["Playwright", "E2E Testing", "Automation"],
+        "github": "https://github.com/Mongkhon-w/Automation_Playwright",
+        "demo": "#"
+      },
+      {
+        "id": 8,
+        "title": "Robot Framework Automation",
+        "description": "โครงสร้างพื้นฐานสำหรับการทดสอบอัตโนมัติโดยใช้ Robot Framework เน้นการเขียนสคริปต์ทดสอบแบบ Keyword-Driven เพื่อให้อ่านเข้าใจง่ายและรองรับการทดสอบระบบที่ซับซ้อน",
+        "tech": ["Robot Framework", "Keyword-Driven", "Automation"],
+        "github": "https://github.com/Mongkhon-w/Robot_Test_Automation",
+        "demo": "#"
       }
     ]
   },
