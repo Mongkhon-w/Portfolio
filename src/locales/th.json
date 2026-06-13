@@ -27,7 +27,7 @@
         "id": 2,
         "title": "Secure Authentication API",
         "description": "RESTful API สำหรับยืนยันตัวตนด้วย Golang และ Fiber สร้างระบบความปลอดภัยผ่าน JWT (Access & Refresh Tokens) ร่วมกับ HttpOnly cookies พร้อมการเข้ารหัสแฮช SHA-256 และ bcrypt",
-        "tech": ["Golang", "Fiber", "MySQL", "JWT"],
+        "tech": ["Go", "Fiber", "GORM", "MySQL", "JWT"],
         "github": "https://github.com/Mongkhon-w/Go-Auth-Api",
         "demo": "#"
       },
@@ -35,7 +35,7 @@
         "id": 3,
         "title": "Lab Backend (RESTful API)",
         "description": "ระบบ Backend ที่สร้าง RESTful API โดยใช้ Node.js และ TypeScript ตั้งค่าฐานข้อมูล PostgreSQL ด้วย Docker พร้อมใช้ Prisma ORM จัดการฐานข้อมูลและรูปแบบ JSON",
-        "tech": ["Node.js", "TypeScript", "PostgreSQL", "Docker"],
+        "tech": ["Node.js", "TypeScript", "PostgreSQL", "Docker", "Prisma"],
         "github": "https://github.com/Mongkhon-w",
         "demo": "#"
       },
@@ -43,7 +43,7 @@
         "id": 4,
         "title": "Auth Cookie Authentication",
         "description": "โปรเจกต์พัฒนาระบบยืนยันตัวตนและการจัดการเซสชัน (Session Management) แบบปลอดภัย โดยประยุกต์ใช้ระบบคุกกี้ (Cookies) ในการตรวจสอบสิทธิ์การเข้าถึงข้อมูล",
-        "tech": ["Node.js", "Authentication", "Cookies"],
+        "tech": ["Node.js", "Express", "JWT", "Cookies"],
         "github": "https://github.com/Mongkhon-w/Auth_Cookie",
         "demo": "#"
       },
@@ -51,7 +51,7 @@
         "id": 5,
         "title": "Vite Responsive Website",
         "description": "โปรเจกต์พัฒนาส่วนติดต่อผู้ใช้งาน (Frontend) ที่เน้นการออกแบบ Responsive Design ให้รองรับการแสดงผลทุกขนาดหน้าจอ ทำงานได้อย่างรวดเร็วและมีประสิทธิภาพด้วยเครื่องมือ Vite",
-        "tech": ["Vite", "Responsive", "Frontend"],
+        "tech": ["React", "Vite", "Tailwind CSS", "Responsive"],
         "github": "https://github.com/Mongkhon-w/Vite_Responsive",
         "demo": "#"
       },
@@ -59,7 +59,7 @@
         "id": 6,
         "title": "Dummy App",
         "description": "แอปพลิเคชันต้นแบบ (Prototype) ที่พัฒนาขึ้นเพื่อทดสอบการจัดวาง UI Components การเชื่อมต่อข้อมูลเบื้องต้น และทดสอบโครงสร้างของโปรเจกต์ก่อนพัฒนาจริง",
-        "tech": ["Frontend", "Prototype", "Testing"],
+        "tech": ["React", "Vite", "Prototype", "Testing"],
         "github": "https://github.com/Mongkhon-w/Dummy_App",
         "demo": "#"
       },
@@ -67,7 +67,7 @@
         "id": 7,
         "title": "Playwright Automation Test",
         "description": "โปรเจกต์พัฒนาระบบทดสอบอัตโนมัติ (Automated Testing) สำหรับ Web Application ด้วยเครื่องมือ Playwright เพื่อจำลองการทำงานของผู้ใช้และทดสอบการทำงานแบบ End-to-End (E2E)",
-        "tech": ["Playwright", "E2E Testing", "Automation"],
+        "tech": ["Playwright", "TypeScript", "E2E Testing", "Automation"],
         "github": "https://github.com/Mongkhon-w/Automation_Playwright",
         "demo": "#"
       },
@@ -75,7 +75,7 @@
         "id": 8,
         "title": "Robot Framework Automation",
         "description": "โครงสร้างพื้นฐานสำหรับการทดสอบอัตโนมัติโดยใช้ Robot Framework เน้นการเขียนสคริปต์ทดสอบแบบ Keyword-Driven เพื่อให้อ่านเข้าใจง่ายและรองรับการทดสอบระบบที่ซับซ้อน",
-        "tech": ["Robot Framework", "Keyword-Driven", "Automation"],
+        "tech": ["Robot Framework", "Python", "Selenium", "Automation"],
         "github": "https://github.com/Mongkhon-w/Robot_Test_Automation",
         "demo": "#"
       },
@@ -83,8 +83,9 @@
         "id": 9,
         "title": "Cinema Management System",
         "description": "ระบบโรงภาพยนตร์แบบ Full-Stack ที่แยกสถาปัตยกรรม (Decoupled) ระหว่าง Frontend สำหรับติดต่อกับผู้ใช้ และ Backend สำหรับจัดการ API อย่างชัดเจน เพื่อรองรับการขยายตัวของระบบในอนาคต",
-        "tech": ["Frontend", "Backend", "RESTful API", "Full-Stack"],
-        "github": "https://github.com/Mongkhon-w/cinema-frontend",
+        "tech": ["Go", "Vue", "Redis", "MongoDB"],
+        "github_frontend": "https://github.com/Mongkhon-w/cinema-frontend",
+        "github_backend": "https://github.com/Mongkhon-w/cinema-backend",
         "demo": "#"
       }
     ]

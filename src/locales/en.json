@@ -27,7 +27,7 @@
         "id": 2,
         "title": "Secure Authentication API",
         "description": "A secure RESTful API developed with Golang and Fiber. Implemented JWT (Access & Refresh Tokens) with HttpOnly cookies, secured by SHA-256 and bcrypt hashing.",
-        "tech": ["Golang", "Fiber", "MySQL", "JWT"],
+        "tech": ["Go", "Fiber", "GORM", "MySQL", "JWT"],
         "github": "https://github.com/Mongkhon-w/Go-Auth-Api",
         "demo": "#"
       },
@@ -35,7 +35,7 @@
         "id": 3,
         "title": "Lab Backend (RESTful API)",
         "description": "Built a RESTful API using Node.js and TypeScript. Configured PostgreSQL with Docker, utilized Prisma ORM, and managed data storage in JSON format.",
-        "tech": ["Node.js", "TypeScript", "PostgreSQL", "Docker"],
+        "tech": ["Node.js", "TypeScript", "PostgreSQL", "Docker", "Prisma"],
         "github": "https://github.com/Mongkhon-w",
         "demo": "#"
       },
@@ -43,7 +43,7 @@
         "id": 4,
         "title": "Auth Cookie Authentication",
         "description": "An authentication and session management project utilizing secure cookies to enhance web application security and manage user access effectively.",
-        "tech": ["Node.js", "Authentication", "Cookies"],
+        "tech": ["Node.js", "Express", "JWT", "Cookies"],
         "github": "https://github.com/Mongkhon-w/Auth_Cookie",
         "demo": "#"
       },
@@ -51,7 +51,7 @@
         "id": 5,
         "title": "Vite Responsive Website",
         "description": "A web frontend project focused on responsive design, ensuring a seamless user experience across all screen sizes. Powered by Vite for fast performance.",
-        "tech": ["Vite", "Responsive", "Frontend"],
+        "tech": ["React", "Vite", "Tailwind CSS", "Responsive"],
         "github": "https://github.com/Mongkhon-w/Vite_Responsive",
         "demo": "#"
       },
@@ -59,7 +59,7 @@
         "id": 6,
         "title": "Dummy App",
         "description": "A prototype application built to test UI component layouts, system architecture, and basic data integration before full-scale development.",
-        "tech": ["Frontend", "Prototype", "Testing"],
+        "tech": ["React", "Vite", "Prototype", "Testing"],
         "github": "https://github.com/Mongkhon-w/Dummy_App",
         "demo": "#"
       },
@@ -67,7 +67,7 @@
         "id": 7,
         "title": "Playwright Automation Test",
         "description": "An automated web testing project using Playwright. Designed to simulate real user interactions and perform robust End-to-End (E2E) testing to ensure application stability.",
-        "tech": ["Playwright", "E2E Testing", "Automation"],
+        "tech": ["Playwright", "TypeScript", "E2E Testing", "Automation"],
         "github": "https://github.com/Mongkhon-w/Automation_Playwright",
         "demo": "#"
       },
@@ -75,7 +75,7 @@
         "id": 8,
         "title": "Robot Framework Automation",
         "description": "An automated testing infrastructure built with Robot Framework. Utilizes a Keyword-Driven testing approach to create highly readable and maintainable test scripts for complex systems.",
-        "tech": ["Robot Framework", "Keyword-Driven", "Automation"],
+        "tech": ["Robot Framework", "Python", "Selenium", "Automation"],
         "github": "https://github.com/Mongkhon-w/Robot_Test_Automation",
         "demo": "#"
       },
@@ -83,8 +83,9 @@
         "id": 9,
         "title": "Cinema Management System",
         "description": "A full-stack cinema system featuring a decoupled architecture. It separates the Frontend (user interface) and Backend (API management) into two repositories for superior scalability.",
-        "tech": ["Frontend", "Backend", "RESTful API", "Full-Stack"],
-        "github": "https://github.com/Mongkhon-w/cinema-frontend",
+        "tech": ["Go", "Vue", "Redis", "MongoDB"],
+        "github_frontend": "https://github.com/Mongkhon-w/cinema-frontend",
+        "github_backend": "https://github.com/Mongkhon-w/cinema-backend",
         "demo": "#"
       }
     ]
