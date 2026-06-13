@@ -78,6 +78,14 @@
         "tech": ["Robot Framework", "Keyword-Driven", "Automation"],
         "github": "https://github.com/Mongkhon-w/Robot_Test_Automation",
         "demo": "#"
+      },
+      {
+        "id": 9,
+        "title": "Cinema Management System",
+        "description": "A full-stack cinema system featuring a decoupled architecture. It separates the Frontend (user interface) and Backend (API management) into two repositories for superior scalability.",
+        "tech": ["Frontend", "Backend", "RESTful API", "Full-Stack"],
+        "github": "https://github.com/Mongkhon-w/cinema-frontend",
+        "demo": "#"
       }
     ]
   },

@@ -78,12 +78,20 @@
         "tech": ["Robot Framework", "Keyword-Driven", "Automation"],
         "github": "https://github.com/Mongkhon-w/Robot_Test_Automation",
         "demo": "#"
+      },
+      {
+        "id": 9,
+        "title": "Cinema Management System",
+        "description": "ระบบโรงภาพยนตร์แบบ Full-Stack ที่แยกสถาปัตยกรรม (Decoupled) ระหว่าง Frontend สำหรับติดต่อกับผู้ใช้ และ Backend สำหรับจัดการ API อย่างชัดเจน เพื่อรองรับการขยายตัวของระบบในอนาคต",
+        "tech": ["Frontend", "Backend", "RESTful API", "Full-Stack"],
+        "github": "https://github.com/Mongkhon-w/cinema-frontend",
+        "demo": "#"
       }
     ]
   },
   "about": {
     "title": "เกี่ยวกับฉัน & ประสบการณ์",
-    "description": "ผมเป็นนักศึกษาจบใหม่ที่มีความมุ่งมั่น มีประสบการณ์ฝึกงานในตำแหน่ง IT Support (ดูแลแก้ไขปัญหาระบบปฏิบัติการ Windows/macOS ฮาร์ดแวร์ และโปรแกรมสำนักงาน) ผมพร้อมนำทักษะด้านการพัฒนาซอฟต์แวร์มาประยุกต์ใช้ในการทำงานจริง และเปิดรับการเรียนรู้เทคโนโลยีใหม่ๆ เสมอ",
+    "description": "ผมเป็นนักศึกษาจบใหม่ มีประสบการณ์ฝึกงานในตำแหน่ง IT Support (ดูแลแก้ไขปัญหาระบบปฏิบัติการ Windows/macOS ฮาร์ดแวร์ และโปรแกรมสำนักงาน) ผมพร้อมนำทักษะด้านการพัฒนาซอฟต์แวร์มาประยุกต์ใช้ในการทำงานจริง และเปิดรับการเรียนรู้เทคโนโลยีใหม่ๆ เสมอ",
     "education_title": "ประวัติการศึกษา",
     "education_detail": "วศ.บ. วิศวกรรมคอมพิวเตอร์ - มหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร",
     "contact_title": "ช่องทางการติดต่อ",
