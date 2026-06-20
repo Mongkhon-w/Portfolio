@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa';
 
-const Portfolio = () => {
+const Portfolio = ({ onProjectClick }) => {
   const { t } = useTranslation();
   
   // ดึง Array ของโปรเจกต์จากไฟล์ JSON ตามภาษาที่เลือก
@@ -67,7 +67,7 @@ const Portfolio = () => {
                 ))}
               </div>
 
-              {/* ปุ่มลิงก์ (เหลือแค่ปุ่ม Code) */}
+              {/* ปุ่มลิงก์ (เพิ่มปุ่ม Read Review สำหรับ POS) */}
               <div className="flex gap-4 pt-4 border-t border-gray-200 dark:border-gray-700/50">
                 <a 
                   href={project.github}
@@ -77,6 +77,15 @@ const Portfolio = () => {
                 >
                   <FaGithub size={18} /> Code
                 </a>
+                
+                {project.id === 10 && onProjectClick && (
+                  <button 
+                    onClick={() => onProjectClick(project.id)}
+                    className="flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors ml-auto"
+                  >
+                    Read Review →
+                  </button>
+                )}
               </div>
             </motion.div>
           ))}

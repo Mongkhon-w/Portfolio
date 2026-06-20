@@ -87,6 +87,14 @@
         "github_frontend": "https://github.com/Mongkhon-w/cinema-frontend",
         "github_backend": "https://github.com/Mongkhon-w/cinema-backend",
         "demo": "#"
+      },
+      {
+        "id": 10,
+        "title": "Full-Stack POS & Security Dashboard",
+        "description": "A robust POS and authentication system built with Feature-Driven Architecture. Features include a shopping cart, Role-Based Access Control (RBAC) dashboard, activity logging, and high-security JWT (HttpOnly Cookies) with OAuth support.",
+        "tech": ["Go", "Vue 3", "MongoDB", "Tailwind CSS", "Vite"],
+        "github": "https://github.com/Mongkhon-w",
+        "demo": "#"
       }
     ]
   },

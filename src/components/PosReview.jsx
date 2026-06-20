@@ -1,0 +1,205 @@
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FaArrowLeft, FaGithub, FaCheckCircle, FaLock, FaChartLine, FaUsers } from 'react-icons/fa';
+
+const PosReview = ({ onBack }) => {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  return (
+    <div className="py-20 px-6 bg-white dark:bg-[#0B1120] min-h-screen text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <div className="max-w-5xl mx-auto">
+        
+        {/* Header & Back Button */}
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="mb-8 flex items-center justify-between"
+        >
+          <button 
+            onClick={onBack}
+            className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg font-medium transition-colors"
+          >
+            <FaArrowLeft /> กลับไปหน้าหลัก
+          </button>
+          <a 
+            href="https://github.com/Mongkhon-w" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+          >
+            <FaGithub size={24} /> ดูโค้ดบน GitHub
+          </a>
+        </motion.div>
+
+        {/* Title Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mb-12 text-center"
+        >
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+            Full-Stack POS & Security Dashboard
+          </h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+            ระบบจัดการร้านค้า (Point of Sale) ที่ไม่ได้มีดีแค่หน้าตาที่สวยงามและใช้งานง่าย แต่ยังมาพร้อมกับรากฐานของระบบยืนยันตัวตนระดับองค์กร (Enterprise-grade Authentication) โดดเด่นด้วยการแบ่งแยกระบบหน้าบ้านสำหรับผู้ใช้ทั่วไป และระบบหลังบ้านสำหรับผู้ดูแลอย่างชัดเจน
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            {['Go', 'Gin', 'Vue 3', 'Tailwind CSS', 'MongoDB', 'JWT'].map(tech => (
+              <span key={tech} className="px-4 py-1.5 bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-300 rounded-full text-sm font-semibold border border-blue-200 dark:border-blue-800">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Feature 1: POS */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="order-2 lg:order-1"
+          >
+            <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+              <FaCheckCircle className="text-green-500" /> ระบบขายหน้าร้าน (POS) 🛒
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              หน้าจอสำหรับจัดการการขายถูกออกแบบมาให้พนักงานใช้งานได้รวดเร็ว (User-Friendly) แสดงรายการสินค้าพร้อมรูปภาพ ราคา และป้ายกำกับ "Best Seller" 
+              มีระบบจัดการตะกร้าสินค้าที่อัปเดตจำนวนและคำนวณยอดรวม (Total) ทันทีแบบเรียลไทม์ ทำให้ลดข้อผิดพลาดในการคิดเงิน
+            </p>
+            <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+              <li className="flex items-center gap-2">✨ ค้นหาสินค้าได้รวดเร็ว</li>
+              <li className="flex items-center gap-2">✨ คำนวณราคาและภาษีอัตโนมัติ</li>
+              <li className="flex items-center gap-2">✨ หน้าจอ Responsive รองรับ Tablet และ Desktop</li>
+            </ul>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="order-1 lg:order-2 rounded-xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800"
+          >
+            {/* Placeholder for POS Image */}
+            <div 
+              className="aspect-video bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 relative cursor-pointer overflow-hidden group"
+              onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}assets/pos/pos-1.png`)}
+            >
+              <img src={`${import.meta.env.BASE_URL}assets/pos/pos-1.png`} alt="POS System" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
+              <span className="hidden">ไม่พบรูปภาพ (โปรดตรวจสอบไฟล์ pos-1.png)</span>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Feature 2: Security */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="rounded-xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800"
+          >
+            {/* Placeholder for Security Dashboard Image */}
+            <div 
+              className="aspect-video bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 relative cursor-pointer overflow-hidden group"
+              onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}assets/pos/pos-2.png`)}
+            >
+              <img src={`${import.meta.env.BASE_URL}assets/pos/pos-2.png`} alt="Security Dashboard" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
+              <span className="hidden">ไม่พบรูปภาพ (โปรดตรวจสอบไฟล์ pos-2.png)</span>
+            </div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+              <FaLock className="text-blue-500" /> แดชบอร์ดความปลอดภัย 🛡️
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              ระบบไม่ได้มีแค่การขาย แต่ยังมี Admin Dashboard สำหรับดูแลความปลอดภัยโดยรวมของระบบ สามารถติดตาม Activity Logs, 
+              สถิติการเข้าสู่ระบบ (Total Logins), การพยายามเข้าระบบที่ล้มเหลว (Failed / Blocked) และยอดผู้ใช้ใหม่ 
+            </p>
+            <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+              <li className="flex items-center gap-2">🔐 ใช้ JWT แบบ HttpOnly Cookies ป้องกัน XSS & CSRF</li>
+              <li className="flex items-center gap-2">🔐 Password Policy รัดกุม (ต้องมีตัวอักษรพิเศษและตัวเลข)</li>
+              <li className="flex items-center gap-2">🔐 Rate Limiting ป้องกันการโจมตีแบบ Brute Force</li>
+            </ul>
+          </motion.div>
+        </div>
+
+        {/* Feature 3: Finance & RBAC */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="order-2 lg:order-1"
+          >
+            <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+              <FaChartLine className="text-purple-500" /> การเงิน & จัดการผู้ใช้งาน 👥
+            </h2>
+            <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+              มีระบบประมวลผลรายได้ (Revenue), ต้นทุน (COGS), ค่าใช้จ่าย (Expenses) และกำไรสุทธิ (Net Profit) แบบเรียลไทม์ 
+              รวมถึงระบบจัดการผู้ใช้งานแบบ Role-Based Access Control (RBAC) ที่แบ่งลำดับขั้นสิทธิ์อย่างละเอียด
+            </p>
+            <ul className="space-y-3 text-gray-600 dark:text-gray-300">
+              <li className="flex items-center gap-2">📈 จัดการสินค้าคงคลังและยอดขาย</li>
+              <li className="flex items-center gap-2">👥 แบ่งสิทธิ์ SUPER ADMIN, MANAGER, CASHIER ฯลฯ</li>
+              <li className="flex items-center gap-2">🏗️ Feature-Driven Architecture ขยายสเกลระบบได้ง่าย</li>
+            </ul>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="order-1 lg:order-2 rounded-xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800"
+          >
+            {/* Placeholder for Finance Image */}
+            <div 
+              className="aspect-video bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 relative cursor-pointer overflow-hidden group"
+              onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}assets/pos/pos-3.png`)}
+            >
+              <img src={`${import.meta.env.BASE_URL}assets/pos/pos-3.png`} alt="Finance and RBAC" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
+              <span className="hidden">ไม่พบรูปภาพ (โปรดตรวจสอบไฟล์ pos-3.png)</span>
+            </div>
+          </motion.div>
+        </div>
+
+      </div>
+
+      {/* Image Modal (Lightbox) */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm cursor-zoom-out"
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.img 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              src={selectedImage} 
+              alt="Zoomed Review" 
+              className="max-w-full max-h-[90vh] rounded-lg shadow-2xl cursor-default"
+              onClick={(e) => e.stopPropagation()} 
+            />
+            <button 
+              className="absolute top-6 right-6 text-white text-4xl hover:text-gray-300 transition-colors"
+              onClick={() => setSelectedImage(null)}
+            >
+              &times;
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+    </div>
+  );
+};
+
+export default PosReview;

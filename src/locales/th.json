@@ -87,6 +87,14 @@
         "github_frontend": "https://github.com/Mongkhon-w/cinema-frontend",
         "github_backend": "https://github.com/Mongkhon-w/cinema-backend",
         "demo": "#"
+      },
+      {
+        "id": 10,
+        "title": "Full-Stack POS & Security Dashboard",
+        "description": "ระบบจัดการร้านค้า (POS) และระบบยืนยันตัวตนความปลอดภัยสูง พัฒนาด้วยสถาปัตยกรรม Feature-Driven ประกอบด้วยระบบตะกร้าสินค้า แดชบอร์ดจัดการสิทธิ์ผู้ใช้งาน (RBAC) บันทึกประวัติการใช้งาน (Activity Logs) พร้อมระบบความปลอดภัยด้วย JWT (HttpOnly Cookies) และ OAuth",
+        "tech": ["Go", "Vue 3", "MongoDB", "Tailwind CSS", "Vite"],
+        "github": "https://github.com/Mongkhon-w",
+        "demo": "#"
       }
     ]
   },
