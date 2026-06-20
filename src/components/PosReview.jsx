@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaArrowLeft, FaGithub, FaCheckCircle, FaLock, FaChartLine, FaUsers } from 'react-icons/fa';
+import { FaArrowLeft, FaGithub, FaCheckCircle, FaLock, FaChartLine } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 const PosReview = ({ onBack }) => {
   const [selectedImage, setSelectedImage] = useState(null);
+  const { t } = useTranslation();
 
   return (
     <div className="py-20 px-6 bg-white dark:bg-[#0B1120] min-h-screen text-gray-900 dark:text-gray-100 transition-colors duration-300">
@@ -19,7 +21,7 @@ const PosReview = ({ onBack }) => {
             onClick={onBack}
             className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg font-medium transition-colors"
           >
-            <FaArrowLeft /> กลับไปหน้าหลัก
+            <FaArrowLeft /> {t('posReview.back')}
           </button>
           <a 
             href="https://github.com/Mongkhon-w" 
@@ -27,7 +29,7 @@ const PosReview = ({ onBack }) => {
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
           >
-            <FaGithub size={24} /> ดูโค้ดบน GitHub
+            <FaGithub size={24} /> {t('posReview.github')}
           </a>
         </motion.div>
 
@@ -38,10 +40,10 @@ const PosReview = ({ onBack }) => {
           className="mb-12 text-center"
         >
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
-            Full-Stack POS & Security Dashboard
+            {t('posReview.title')}
           </h1>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            ระบบจัดการร้านค้า (Point of Sale) ที่ไม่ได้มีดีแค่หน้าตาที่สวยงามและใช้งานง่าย แต่ยังมาพร้อมกับรากฐานของระบบยืนยันตัวตนระดับองค์กร (Enterprise-grade Authentication) โดดเด่นด้วยการแบ่งแยกระบบหน้าบ้านสำหรับผู้ใช้ทั่วไป และระบบหลังบ้านสำหรับผู้ดูแลอย่างชัดเจน
+            {t('posReview.subtitle')}
           </p>
           
           <div className="flex flex-wrap justify-center gap-3 mt-6">
@@ -62,16 +64,15 @@ const PosReview = ({ onBack }) => {
             className="order-2 lg:order-1"
           >
             <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
-              <FaCheckCircle className="text-green-500" /> ระบบขายหน้าร้าน (POS) 🛒
+              <FaCheckCircle className="text-green-500" /> {t('posReview.feature1_title')}
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              หน้าจอสำหรับจัดการการขายถูกออกแบบมาให้พนักงานใช้งานได้รวดเร็ว (User-Friendly) แสดงรายการสินค้าพร้อมรูปภาพ ราคา และป้ายกำกับ "Best Seller" 
-              มีระบบจัดการตะกร้าสินค้าที่อัปเดตจำนวนและคำนวณยอดรวม (Total) ทันทีแบบเรียลไทม์ ทำให้ลดข้อผิดพลาดในการคิดเงิน
+              {t('posReview.feature1_desc')}
             </p>
             <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-              <li className="flex items-center gap-2">✨ ค้นหาสินค้าได้รวดเร็ว</li>
-              <li className="flex items-center gap-2">✨ คำนวณราคาและภาษีอัตโนมัติ</li>
-              <li className="flex items-center gap-2">✨ หน้าจอ Responsive รองรับ Tablet และ Desktop</li>
+              <li className="flex items-center gap-2">{t('posReview.feature1_li1')}</li>
+              <li className="flex items-center gap-2">{t('posReview.feature1_li2')}</li>
+              <li className="flex items-center gap-2">{t('posReview.feature1_li3')}</li>
             </ul>
           </motion.div>
           <motion.div 
@@ -85,8 +86,8 @@ const PosReview = ({ onBack }) => {
               className="aspect-video bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 relative cursor-pointer overflow-hidden group"
               onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}assets/pos/pos-1.png`)}
             >
-              <img src={`${import.meta.env.BASE_URL}assets/pos/pos-1.png`} alt="POS System" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
-              <span className="hidden">ไม่พบรูปภาพ (โปรดตรวจสอบไฟล์ pos-1.png)</span>
+              <img src={`${import.meta.env.BASE_URL}assets/pos/pos-1.png`} alt={t('posReview.img_alt1')} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
+              <span className="hidden">{t('posReview.img_err1')}</span>
             </div>
           </motion.div>
         </div>
@@ -104,8 +105,8 @@ const PosReview = ({ onBack }) => {
               className="aspect-video bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 relative cursor-pointer overflow-hidden group"
               onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}assets/pos/pos-2.png`)}
             >
-              <img src={`${import.meta.env.BASE_URL}assets/pos/pos-2.png`} alt="Security Dashboard" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
-              <span className="hidden">ไม่พบรูปภาพ (โปรดตรวจสอบไฟล์ pos-2.png)</span>
+              <img src={`${import.meta.env.BASE_URL}assets/pos/pos-2.png`} alt={t('posReview.img_alt2')} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
+              <span className="hidden">{t('posReview.img_err2')}</span>
             </div>
           </motion.div>
           <motion.div 
@@ -114,16 +115,15 @@ const PosReview = ({ onBack }) => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
-              <FaLock className="text-blue-500" /> แดชบอร์ดความปลอดภัย 🛡️
+              <FaLock className="text-blue-500" /> {t('posReview.feature2_title')}
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              ระบบไม่ได้มีแค่การขาย แต่ยังมี Admin Dashboard สำหรับดูแลความปลอดภัยโดยรวมของระบบ สามารถติดตาม Activity Logs, 
-              สถิติการเข้าสู่ระบบ (Total Logins), การพยายามเข้าระบบที่ล้มเหลว (Failed / Blocked) และยอดผู้ใช้ใหม่ 
+              {t('posReview.feature2_desc')}
             </p>
             <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-              <li className="flex items-center gap-2">🔐 ใช้ JWT แบบ HttpOnly Cookies ป้องกัน XSS & CSRF</li>
-              <li className="flex items-center gap-2">🔐 Password Policy รัดกุม (ต้องมีตัวอักษรพิเศษและตัวเลข)</li>
-              <li className="flex items-center gap-2">🔐 Rate Limiting ป้องกันการโจมตีแบบ Brute Force</li>
+              <li className="flex items-center gap-2">{t('posReview.feature2_li1')}</li>
+              <li className="flex items-center gap-2">{t('posReview.feature2_li2')}</li>
+              <li className="flex items-center gap-2">{t('posReview.feature2_li3')}</li>
             </ul>
           </motion.div>
         </div>
@@ -137,16 +137,15 @@ const PosReview = ({ onBack }) => {
             className="order-2 lg:order-1"
           >
             <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
-              <FaChartLine className="text-purple-500" /> การเงิน & จัดการผู้ใช้งาน 👥
+              <FaChartLine className="text-purple-500" /> {t('posReview.feature3_title')}
             </h2>
             <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              มีระบบประมวลผลรายได้ (Revenue), ต้นทุน (COGS), ค่าใช้จ่าย (Expenses) และกำไรสุทธิ (Net Profit) แบบเรียลไทม์ 
-              รวมถึงระบบจัดการผู้ใช้งานแบบ Role-Based Access Control (RBAC) ที่แบ่งลำดับขั้นสิทธิ์อย่างละเอียด
+              {t('posReview.feature3_desc')}
             </p>
             <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-              <li className="flex items-center gap-2">📈 จัดการสินค้าคงคลังและยอดขาย</li>
-              <li className="flex items-center gap-2">👥 แบ่งสิทธิ์ SUPER ADMIN, MANAGER, CASHIER ฯลฯ</li>
-              <li className="flex items-center gap-2">🏗️ Feature-Driven Architecture ขยายสเกลระบบได้ง่าย</li>
+              <li className="flex items-center gap-2">{t('posReview.feature3_li1')}</li>
+              <li className="flex items-center gap-2">{t('posReview.feature3_li2')}</li>
+              <li className="flex items-center gap-2">{t('posReview.feature3_li3')}</li>
             </ul>
           </motion.div>
           <motion.div 
@@ -160,8 +159,8 @@ const PosReview = ({ onBack }) => {
               className="aspect-video bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-gray-500 relative cursor-pointer overflow-hidden group"
               onClick={() => setSelectedImage(`${import.meta.env.BASE_URL}assets/pos/pos-3.png`)}
             >
-              <img src={`${import.meta.env.BASE_URL}assets/pos/pos-3.png`} alt="Finance and RBAC" className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
-              <span className="hidden">ไม่พบรูปภาพ (โปรดตรวจสอบไฟล์ pos-3.png)</span>
+              <img src={`${import.meta.env.BASE_URL}assets/pos/pos-3.png`} alt={t('posReview.img_alt3')} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'block'; }} />
+              <span className="hidden">{t('posReview.img_err3')}</span>
             </div>
           </motion.div>
         </div>
@@ -184,7 +183,7 @@ const PosReview = ({ onBack }) => {
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               src={selectedImage} 
-              alt="Zoomed Review" 
+              alt={t('posReview.zoom_alt')} 
               className="max-w-full max-h-[90vh] rounded-lg shadow-2xl cursor-default"
               onClick={(e) => e.stopPropagation()} 
             />

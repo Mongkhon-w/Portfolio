@@ -108,5 +108,33 @@
     "phone": "095-938-8521",
     "github": "https://github.com/Mongkhon-w",
     "linkedin": "https://www.linkedin.com/in/mongkhon-wichaiphap-a1b87b401/?locale=th"
+  },
+  "posReview": {
+    "back": "กลับไปหน้าหลัก",
+    "github": "ดูโค้ดบน GitHub",
+    "title": "Full-Stack POS & Security Dashboard",
+    "subtitle": "ระบบจัดการร้านค้า (Point of Sale) ที่ไม่ได้มีดีแค่หน้าตาที่สวยงามและใช้งานง่าย แต่ยังมาพร้อมกับรากฐานของระบบยืนยันตัวตนระดับองค์กร (Enterprise-grade Authentication) โดดเด่นด้วยการแบ่งแยกระบบหน้าบ้านสำหรับผู้ใช้ทั่วไป และระบบหลังบ้านสำหรับผู้ดูแลอย่างชัดเจน",
+    "feature1_title": "ระบบขายหน้าร้าน (POS) 🛒",
+    "feature1_desc": "หน้าจอสำหรับจัดการการขายถูกออกแบบมาให้พนักงานใช้งานได้รวดเร็ว (User-Friendly) แสดงรายการสินค้าพร้อมรูปภาพ ราคา และป้ายกำกับ \"Best Seller\" มีระบบจัดการตะกร้าสินค้าที่อัปเดตจำนวนและคำนวณยอดรวม (Total) ทันทีแบบเรียลไทม์ ทำให้ลดข้อผิดพลาดในการคิดเงิน",
+    "feature1_li1": "✨ ค้นหาสินค้าได้รวดเร็ว",
+    "feature1_li2": "✨ คำนวณราคาและภาษีอัตโนมัติ",
+    "feature1_li3": "✨ หน้าจอ Responsive รองรับ Tablet และ Desktop",
+    "img_alt1": "POS System",
+    "img_err1": "ไม่พบรูปภาพ (โปรดตรวจสอบไฟล์ pos-1.png)",
+    "feature2_title": "แดชบอร์ดความปลอดภัย 🛡️",
+    "feature2_desc": "ระบบไม่ได้มีแค่การขาย แต่ยังมี Admin Dashboard สำหรับดูแลความปลอดภัยโดยรวมของระบบ สามารถติดตาม Activity Logs, สถิติการเข้าสู่ระบบ (Total Logins), การพยายามเข้าระบบที่ล้มเหลว (Failed / Blocked) และยอดผู้ใช้ใหม่",
+    "feature2_li1": "🔐 ใช้ JWT แบบ HttpOnly Cookies ป้องกัน XSS & CSRF",
+    "feature2_li2": "🔐 Password Policy รัดกุม (ต้องมีตัวอักษรพิเศษและตัวเลข)",
+    "feature2_li3": "🔐 Rate Limiting ป้องกันการโจมตีแบบ Brute Force",
+    "img_alt2": "Security Dashboard",
+    "img_err2": "ไม่พบรูปภาพ (โปรดตรวจสอบไฟล์ pos-2.png)",
+    "feature3_title": "การเงิน & จัดการผู้ใช้งาน 👥",
+    "feature3_desc": "มีระบบประมวลผลรายได้ (Revenue), ต้นทุน (COGS), ค่าใช้จ่าย (Expenses) และกำไรสุทธิ (Net Profit) แบบเรียลไทม์ รวมถึงระบบจัดการผู้ใช้งานแบบ Role-Based Access Control (RBAC) ที่แบ่งลำดับขั้นสิทธิ์อย่างละเอียด",
+    "feature3_li1": "📈 จัดการสินค้าคงคลังและยอดขาย",
+    "feature3_li2": "👥 แบ่งสิทธิ์ SUPER ADMIN, MANAGER, CASHIER ฯลฯ",
+    "feature3_li3": "🏗️ Feature-Driven Architecture ขยายสเกลระบบได้ง่าย",
+    "img_alt3": "Finance and RBAC",
+    "img_err3": "ไม่พบรูปภาพ (โปรดตรวจสอบไฟล์ pos-3.png)",
+    "zoom_alt": "Zoomed Review"
   }
 }

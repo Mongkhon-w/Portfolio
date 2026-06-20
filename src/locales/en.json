@@ -108,5 +108,33 @@
     "phone": "095-938-8521",
     "github": "https://github.com/Mongkhon-w",
     "linkedin": "https://www.linkedin.com/in/mongkhon-wichaiphap-a1b87b401/"
+  },
+  "posReview": {
+    "back": "Back to Home",
+    "github": "View Code on GitHub",
+    "title": "Full-Stack POS & Security Dashboard",
+    "subtitle": "A Point of Sale system that goes beyond a beautiful and intuitive interface, built upon a robust Enterprise-grade Authentication foundation. It distinctly separates the storefront for regular users and the backend dashboard for administrators.",
+    "feature1_title": "Point of Sale (POS) 🛒",
+    "feature1_desc": "The sales management screen is designed for speed and user-friendliness, displaying products with images, prices, and 'Best Seller' badges. It features a real-time shopping cart that instantly updates quantities and totals, minimizing calculation errors.",
+    "feature1_li1": "✨ Fast product search",
+    "feature1_li2": "✨ Automatic price and tax calculation",
+    "feature1_li3": "✨ Responsive layout for Tablet and Desktop",
+    "img_alt1": "POS System",
+    "img_err1": "Image not found (Please check pos-1.png)",
+    "feature2_title": "Security Dashboard 🛡️",
+    "feature2_desc": "Beyond sales, the system includes an Admin Dashboard for comprehensive security oversight. Monitor Activity Logs, total logins, failed/blocked attempts, and new user registrations in real-time.",
+    "feature2_li1": "🔐 JWT via HttpOnly Cookies to prevent XSS & CSRF",
+    "feature2_li2": "🔐 Strict Password Policy (requires special chars and numbers)",
+    "feature2_li3": "🔐 Rate Limiting to prevent Brute Force attacks",
+    "img_alt2": "Security Dashboard",
+    "img_err2": "Image not found (Please check pos-2.png)",
+    "feature3_title": "Finance & User Management 👥",
+    "feature3_desc": "Features real-time processing of Revenue, Cost of Goods Sold (COGS), Expenses, and Net Profit. Includes a highly granular Role-Based Access Control (RBAC) user management system.",
+    "feature3_li1": "📈 Manage inventory and sales",
+    "feature3_li2": "👥 Assign roles like SUPER ADMIN, MANAGER, CASHIER, etc.",
+    "feature3_li3": "🏗️ Feature-Driven Architecture for easy scaling",
+    "img_alt3": "Finance and RBAC",
+    "img_err3": "Image not found (Please check pos-3.png)",
+    "zoom_alt": "Zoomed Review"
   }
 }
